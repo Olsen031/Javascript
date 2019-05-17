@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>5 Elements</title>
+  </head>
+  <body>
+    <h2>Click the button below to enter the current date.</h2>
+
+    <button onclick="enterDate()"> Enter date</button>
+
+    <p id="demo"></p>
+
+
+    <script>
+    var date = getDate();
+    var month = getMonth();
+    var year = getYear();
+
+    if(date < 10){
+      date = "0" + date;
+    }
+    if(month < 9){
+      month = "0" + month;
+    }
+    var correctDate = month + date + year;
+    function enterDate(){
+      var txt;
+      var theDate = prompt("Please enter the correct date with 0's and no spaces", "");
+      if(theDate.equals(correctDate)){
+        txt = "You entered the correct date";
+      }
+      else{
+        txt = "You entered the wrong date. The correct date was: " + correctDate;
+      }
+      txt = document.getElementById("demo").innerHTML;
+    }
+
+
+    </script>
+  </body>
+</html>
